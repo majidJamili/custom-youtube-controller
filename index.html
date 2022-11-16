@@ -17,31 +17,45 @@
     <br>
     <div class="contollers">
         <a href="#" id="add-task"><span class="material-symbols-outlined">add</span></a>
-        <a href="#" id ="pause"><span class="material-symbols-outlined">pause</span></a>
-        <a href="#" id="resume"><span class="material-symbols-outlined">play_arrow</span></a>
+        <!-- <a href="#" id ="pause"><span class="material-symbols-outlined">pause</span></a> -->
+        <!-- <a href="#" id="resume"><span class="material-symbols-outlined">play_arrow</span></a> -->
 
     </div>
     <h3>Task Lists</h3>
     <ul id="task-list"> </ul>
 
     <div class="form-popup" id="myForm">
-        <form class="form-container">
-            <table>
-                <tr>
-                    <th><h5><strong> Add Task</strong></h5></th>
-                    <th><button type="button" class="btn-close " onclick="closeForm()"></button></th>
-                </tr>
-            </table>  
-          
-          <input type="text" placeholder="Enter Title" name="title"  placeholder="title" required >
-          <select name="types" id="types">
-                <option value="Value-adding">Value-adding</option>
-                <option value="Non-value-adding">Non-value-adding</option>
-                <option value="Waste">Waste</option>
-          </select>
-          <br>
-          <br>
-          <button type="button" class="btn btn-sm btn-success">+ ADD</button>
+        <form class="taskpanel-form-container">
+            <button type="button" class="btn-close" onclick="closeForm()"></button>
+            <div class="taskpanel-form-container-header">
+                <h5>CREATE TASK</h5>
+            </div>
+            <div class="taskpanel-from-grid">
+                <div class="span-two">
+                    <input type="text" class="form-control" id="title-input"  placeholder="Title">
+                    <br>
+                    <select name="types" class="form-select" id="types" multiple>
+                        <option value="Value-adding">Value-adding</option>
+                        <option value="Non-value-adding">Non-value-adding</option>
+                        <option value="Waste">Waste</option>
+                    </select>
+                </div>                
+                <label for="resume">Start</label>
+                <div class="play">
+                    <a href="#" id="resume"><span class="play material-symbols-outlined">play_arrow</span></a>
+                </div>
+                <input id ="start-time-id" type="number" name="startTime"  placeholder="title" value = "1212"required >
+                <label for="resume">End</label>
+                <div class="pause">
+                    <a href="#" id ="pause"><span class="material-symbols-outlined pause">stop</span></a>
+                </div>
+                <input id ="end-time-id" type="number" name="endTime"  placeholder="title" value="13213" required >
+         </div>          
+
+          <div class="taskpanel-row-container">
+            <button type="button" class="btn btn-sm btn-danger" onclick="closeForm()">Cancel</button>
+            <button type="button" class="btn btn-sm btn-success" >Save Task</button>
+          </div>
         </form>
       </div>
     

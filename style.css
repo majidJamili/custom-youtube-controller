@@ -1,12 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;700&display=swap');
+*,*::after,*::before{
+  box-sizing: border-box;
+}
 
+.taskpanel-from-grid{
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 33.3%) ;
+  padding: 10px;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.span-two{
+  grid-column: span 3;
+}
 
 body{
     font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 .material-symbols-outlined{
     font-size: 60px;
-    color: rgb(52, 4, 92);
+    color: rgb(251, 249, 253);
+}
+.play .material-symbols-outlined {
+  font-size: 60px;
+  color: rgb(64, 197, 11);
+}
+.pause .material-symbols-outlined {
+  font-size: 60px;
+  color: rgb(219, 181, 10);
 }
 
 .open-button {
@@ -22,56 +47,52 @@ body{
     width: 280px;
   }
   
-  /* The popup form - hidden by default */
   .form-popup {
     display: none;
     position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
+    top: 10px;
+    right: 10px;
+    border: none;
+    z-index: 100;
   }
   
-  /* Add styles to the form container */
-  .form-container {
+  .taskpanel-form-container {
     max-width: 300px;
     padding: 10px;
-    background-color: white;
-  }
-  
-  /* Full-width input fields */
-  .form-container input[type=text], .form-container input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-  }
-  
-  /* When the inputs get focus, do something */
-  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-  
-  /* Set a style for the submit/login button */
-  .form-container .btn {
-    background-color: #04AA6D;
+    background-color: black;
     color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom:10px;
-    opacity: 0.8;
+  }
+  .taskpanel-form-container-header{
+    display: flex;
+    flex-direction: row;
+
   }
   
-  /* Add a red background color to the cancel button */
-  .form-container .cancel {
+
+  .taskpanel-form-container .btn-success {
+    background-color:  rgba(6, 179, 6,0.7);
+    border: none;
+    width: 50%;
+    margin-bottom:10px;
+
+  }
+  .taskpanel-form-container .btn-danger {
+    background-color:  rgba(223, 7, 25, 0.7);
+    border: none;
+    width: 25%;
+    margin-bottom:10px;
+  }
+  
+  .taskpanel-form-container .cancel {
     background-color: red;
   }
   
-  /* Add some hover effects to buttons */
-  .form-container .btn:hover, .open-button:hover {
+  .taskpanel-form-container .btn:hover, .open-button:hover {
     opacity: 1;
   }
+.btn-close{
+  background-color: crimson;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}

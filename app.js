@@ -28,6 +28,8 @@
                         };
                         document.getElementById('pause').onclick = function() {
                             player.pauseVideo();
+                            const endTimeInput = document.getElementById('end-time-id'); 
+                            endTimeInput.value = player.getCurrentTime(); 
                         };
 
                         document.getElementById('add-task').onclick = function(){
@@ -35,6 +37,8 @@
                             var currentTime = player.getCurrentTime(); 
                             const taskList = document.getElementById('task-list'); 
                             document.getElementById("myForm").style.display = "block";
+                            const startTimeInput = document.getElementById('start-time-id'); 
+                            startTimeInput.value = player.getCurrentTime(); 
 
                             const item = document.createElement('li'); 
                             item.innerHTML = currentTime; 

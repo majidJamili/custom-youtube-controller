@@ -19,10 +19,38 @@
                                 'controls': 0,
                                 'autoplay':0
                               },
+                            events:{
+                                'onReady': function(){document.getElementById('header-title').innerText="Project is being loaded ...!"},
+                                'onStateChange':function(){document.getElementById('state').innerText="State is Changed"}
+                            }
                 
                         });
-                        document.getElementById('resume').onclick = function() {
-  
+
+                        document.getElementById('custom-function').onclick =function(){
+                            player.loadVideoById({
+                                videoId: 'ymXrTrIbWsI',
+                                'autoplay':0,
+                                startSeconds:350,
+                                endSeconds:450, 
+                                suggestedQuality:'large'
+                            })
+                        };
+                        document.getElementById('seek-video').onclick = function(){
+                            player.seekTo(200, true); 
+                        };
+                        document.getElementById('smaller-video').onclick = function(){
+                            player.setSize({'width': 200,'height':250}); 
+                        };
+                        document.getElementById('bigger-video').onclick = function(){
+                            player.setSize({'width': 800,'height':800}); 
+                        };
+                        document.getElementById('duration-video').onclick = function(){
+                            player.getDuration(); 
+                            document.getElementById('header-title').innerText=player.getDuration(); 
+                            
+                        };
+
+                        document.getElementById('resume').onclick = function() {  
                             player.playVideo();
                             
                         };
